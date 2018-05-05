@@ -1,21 +1,45 @@
-//
-// geef de vis een random positie en een random kleur
-//
-let fishes = document.getElementsByTagName("fish")
-let fish = fishes[0]
-fish.style.left = "200px"
-fish.style.top = "100px"
-fish.style.webkitFilter = "hue-rotate(200deg)"
-fish.style.filter = "hue-rotate(200deg)"
+// Pakt de breedte en hoogte van de browser
+let screenWidth = window.innerWidth
+let screenHeight = window.innerHeight
 
-//
-// geef de bubble een random positie
-//
-let bubbles = document.getElementsByTagName("bubble")
-let bubble = bubbles[0]
-bubble.style.left = "200px"
-bubble.style.top = "0px"
+for (fish = 0; fish < 100; fish++) {
 
+	let fishElement = document.createElement("fish")
+
+	// Pak breedte en hoogte van de vis. Hoogte is groter dan de vis zelf omdat de vis op en neer beweegt
+	let fishWidth = 130
+	let fishHeight = 200
+
+	// Fish color
+	fishElement.style.backgroundColor = "hsl("+ Math.floor(Math.random() * 360) + 1, Math.floor(Math.random() * 100) + 1, Math.floor(Math.random() * 100) + 1+")"
+
+	// X en Y berekening
+	// We halen fishWidth en Height van screenWidth en height af om te voorkomen dat de vis uit het scherm spawned
+	// ToFixed rond het getal af
+	let fishX = (Math.random() * (screenWidth - fishWidth)).toFixed()
+	let fishY = (Math.random() * (screenHeight - fishHeight)).toFixed()
+
+	// Fish de X en Y positie geven
+	fishElement.style.left = fishX + "px"
+	fishElement.style.top = fishY + "px"
+
+	// Fish aan body toevoegen
+	document.body.appendChild(fishElement)
+
+}
+
+for (bubble = 0; bubble < 100; bubble++) {
+	//
+	// Geef de bubble een random positie
+	//
+	let bubbleElement = document.createElement("bubble")
+	let bubbleWidth = 55
+	let bubbleX = (Math.random() * (screenWidth - bubbleWidth)).toFixed()
+
+	bubbleElement.style.left = bubbleX + "px"
+
+	document.body.appendChild(bubbleElement)
+}
 //
 // roep een functie aan als alles geladen is
 //
