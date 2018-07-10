@@ -1,0 +1,50 @@
+/*----------------------------------------ALGEMEEN*/
+* {
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@font-face {
+    font-family: font;
+    src: url(../fonts/Pokemon.ttf);
+
+}
+body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: font;
+}
+background_level_1{
+    background-position: left top !important;
+    background-repeat: repeat !important;
+    background-size: auto !important;
+}
+/*----------------------------------------MENU*/
+H2{
+    color: #202020;
+}
+scroll{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+boss {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    display: block;
+}
+hero {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    display: block;
+}
+.selected{
+    color: red;
+}
